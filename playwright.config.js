@@ -16,6 +16,11 @@ export default defineConfig({
   testDir: './tests',
   workers:3,
   reporter: 'html',
+  timeout:30*1000, //testcase timeout
+
+  expect:{  //assertion timeout
+    timeout:40*1000
+  },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,
