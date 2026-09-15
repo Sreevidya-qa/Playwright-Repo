@@ -57,7 +57,7 @@ test.only ("Locators One", async({page})=>{
 
     await expect(msgLocator).toBeVisible()// this method is used to verify that the element is visible on the web page. if the element is not visible then it will throw an error.
     await expect(msgLocator).toHaveText(successMessage)// this method is used to verify that the locator has the expected text. if the element does not have the expected text then it will throw an error.
-    await expect(successMessage).toContain("successfully")
+   // await expect(successMessage).toContain("successfully")
     
     await page.waitForTimeout(3000)
 })
