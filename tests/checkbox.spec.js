@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test'
+import { resourceLimits } from 'node:worker_threads'
 
 test ('Checkbox click', async ({page})=>{
 await page.goto("https://selenium.qabible.in/index.php")
@@ -8,11 +9,18 @@ const checkBoxDemo= page.getByRole ("link",{name:"Checkbox Demo"})
 await checkBoxDemo.click()
 
 const singleCheckbox= page.getByLabel("Click on this check box")
-singleCheckbox.click()
+await singleCheckbox.click()
 
 const singleCheckboxmessage= page.locator("#message-one")
 const message=  await singleCheckboxmessage.textContent()
 console.log (message)
+
+const result= await singleCheckbox.isChecked() // this will returns a boolean value
+console.log(result)
+await expect(singleCheckbox).toBeChecked()  
+await expect(result).toBeTruthy()
+//await expect(result).toBeFalsy()
+
 
 await expect(singleCheckboxmessage).toBeVisible()
 await expect(message).toContain("box")
