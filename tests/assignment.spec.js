@@ -3,6 +3,9 @@ import {test,expect} from "@playwright/test"
 test("Assignment",async ({page})=>{
 
     await page.goto ("https://selenium.qabible.in/simple-form-demo.php")
+    console.log(await page.title())
+    await expect (page).toHaveTitle ("Obsqura Testing")
+
     await page.locator("#single-input-field").fill("I am learning Playwright");
     await page.getByRole("button",{name:"Show Message"}).click()
     
@@ -13,7 +16,7 @@ test("Assignment",async ({page})=>{
     await page.waitForTimeout(5000)
 })
 
-test.only ("Assignmenttwo" , async ({page})=>{
+test ("Assignmenttwo" , async ({page})=>{
     await page.goto ("https://selenium.qabible.in/index.php")
     
     const inputForm= page.getByRole("link",{name: 'Input Form'})
@@ -40,15 +43,22 @@ test.only ("Assignmenttwo" , async ({page})=>{
     
    console.log(selectedMessage)
 
+   await page.waitForTimeout(3000)
+
+})
+
+test.only ("Handling simple alert",async ({page})=>{
+
+    await page.goto("https://selenium.qabible.in/javascript-alert.php")
+     const simpleAlertButton= page.getByRole('button',{name:'Click me!'}).first()
+
+    page.on('dialog', async (simplealert)=>{
+        console.log(simplealert.type())
+        console.log(simplealert.message())
+        await page.waitForTimeout(2000)
+        simplealert.accept()
+
+    })
+   await simpleAlertButton.click()
    
-
-    await page.waitForTimeout(3000)
-
-
-
-    
-
-
-
-
 })

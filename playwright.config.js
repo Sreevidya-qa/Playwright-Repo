@@ -21,9 +21,11 @@ export default defineConfig({
   expect:{  //assertion timeout
     timeout:40*1000
   },
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: false, // means trigger the test with ui shown
+    //browserName:"chromium"-- here we can give as webkit , firefox to trigger it in specific browsers
   },
 
   /* Configure projects for major browsers */
