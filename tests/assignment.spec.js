@@ -55,6 +55,7 @@ test.only ("Handling simple alert",async ({page})=>{
     page.on('dialog', async (simplealert)=>{
         console.log(simplealert.type())
         console.log(simplealert.message())
+        await expect(simplealert.message()).toBe("I am a Javascript alert box!")
         await page.waitForTimeout(2000)
         simplealert.accept()
 
