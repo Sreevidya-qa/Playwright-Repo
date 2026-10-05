@@ -1,5 +1,4 @@
 import {test,expect} from "@playwright/test"
-import { count } from "node:console"
 
 test('login screen', async ({page})=>{
 
@@ -59,10 +58,11 @@ test('login screen', async ({page})=>{
 
     const finishBtn= page.getByRole('button',{name:'Finish'})
     await finishBtn.click()
-// https://www.saucedemo.com/checkout-complete.html
+
    
     const thankyouMessage= page.locator('.complete-header')
     await expect(thankyouMessage).toHaveText("Thank you for your order!")
+    
     await expect(page).toHaveURL("https://www.saucedemo.com/checkout-complete.html")
 
     await page.waitForTimeout(3000)
