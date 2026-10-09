@@ -1,5 +1,5 @@
 import {test,expect} from "@playwright/test"
-import { PageObjectManager } from "../pages/PageObjectManager"
+import { objectManager} from "../pagesTS/objectManager"
 import data from "../Utils/data.json"
 
 //const testData= JSON.parse(JSON.stringify(data))// used to convert JSON data into string format and then convert it into JSON format.
@@ -15,7 +15,7 @@ test(`login screen ${testData.myProduct}`, async ({page})=>{ //this change is us
     // then error will be thrown. so we need to make the testname dynamic by using the data from JSON file. 
     // we can use this method to run the same test case for multiple data sets.
 
-    const pom= new PageObjectManager(page)
+    const pom= new objectManager(page)
 
     const loginpage= await pom.getLoginPage()
     await loginpage.navigateToPage()

@@ -1,0 +1,32 @@
+[{
+    "uname": "standard_user",
+    "passwrd": "secret_sauce",
+    "firstName": "Sree",
+    "lastName": "S",
+    "zipCode": "562125",
+    "myProduct": "Sauce Labs Bolt T-Shirt"
+},
+{
+    "uname": "standard_user",
+    "passwrd": "secret_sauce",
+    "firstName": "Hari",
+    "lastName": "S",
+    "zipCode": "562125",
+    "myProduct": "Sauce Labs Fleece Jacket"
+},
+{
+    "uname": "standard_user",
+    "passwrd": "secret_sauce",
+    "firstName": "Prarthana",
+    "lastName": "S",
+    "zipCode": "562125",
+    "myProduct": "Sauce Labs Bike Light"
+},
+{
+    "uname": "standard_user",
+    "passwrd": "secret_sauce",
+    "firstName": "Pranav",
+    "lastName": "S",
+    "zipCode": "562125",
+    "myProduct": "Test.allTheThings() T-Shirt (Red)"
+}]

@@ -25,6 +25,9 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false, // means trigger the test with ui shown
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    trace:"retain-on-failure"
     //browserName:"chromium"-- here we can give as webkit , firefox to trigger it in specific browsers
   },
 

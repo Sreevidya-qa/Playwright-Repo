@@ -3,7 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "headed": "npx playwright test --headed",
+    "debug": "npx playwright test --debug",
+    "report": "npx playwright show-report",
+    "UI": "npx playwright test --ui",
+    "config" :"npx playwright test --config=playwright.config1.js",
+    "firefox" : "npx playwright test --config=playwright.config1.js --project=firefox_project",
+    "chromium" : "npx playwright test --config=playwright.config1.js --project=chromium_project",
+    "webkit" : "npx playwright test --config=playwright.config1.js --project=webkit_project"
+   
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
