@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test'
 
-test ("handling alerts", async ({page})=>{
+test ("handling alerts @smoke", async ({page})=>{
     await page.goto ("https://selenium.qabible.in/javascript-alert.php")
     const clickMe= page.getByRole('button', {name:'Click me!'}).last()
     
@@ -13,3 +13,5 @@ test ("handling alerts", async ({page})=>{
 
     await page.waitForTimeout(5000)
 })
+//npx playwright test --grep "@smoke|@web" this will run either smoke or web
+//npx playwright test --grep "(?=.*@web)(?=.*@smoke)"- this will run only that tc which has both web and smoke

@@ -3,17 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
     "test": "npx playwright test",
     "headed": "npx playwright test --headed",
     "debug": "npx playwright test --debug",
     "report": "npx playwright show-report",
     "UI": "npx playwright test --ui",
-    "config" :"npx playwright test --config=playwright.config1.js",
-    "firefox" : "npx playwright test --config=playwright.config1.js --project=firefox_project",
-    "chromium" : "npx playwright test --config=playwright.config1.js --project=chromium_project",
-    "webkit" : "npx playwright test --config=playwright.config1.js --project=webkit_project"
-   
+    "config": "npx playwright test --config=playwright.config1.js",
+    "firefox": "npx playwright test --config=playwright.config1.js --project=firefox_project",
+    "chromium": "npx playwright test --config=playwright.config1.js --project=chromium_project",
+    "webkit": "npx playwright test --config=playwright.config1.js --project=webkit_project",
+    "web": "npx playwright test --grep @web",
+    "weborsmoke": "npx playwright test --grep '@smoke|@web'",
+    "webandsmoke": "npx playwright test --grep '(?=.*@web)(?=.*@smoke)'",
+    "codegen":"npx playwright codegen url"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +27,8 @@
     "@playwright/test": "^1.52.0",
     "@types/node": "^26.4.1",
     "playwright": "^1.62.1"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
   }
 }
