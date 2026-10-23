@@ -27,7 +27,7 @@ test("Types of Locators",async ({page})=>{// whenever we specify .only only that
     await page.goto("https://selenium.qabible.in/form-submit.php")
 });
 
-test.only ("Locators One", async({page})=>{
+test ("Locators One", async({page})=>{
     await page.goto("https://selenium.qabible.in/form-submit.php")
     await page.locator("#validationCustom01").fill("Vidya")// locating elements by id using css selector
     //await page.pause()// this will pause the execution of the test case and then we need to manually resume the function then only 

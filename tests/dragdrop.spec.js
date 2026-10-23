@@ -17,7 +17,7 @@ test("drag and drop", async ({page})=>{
 
 })
 
-test.only("multiple drag and drop", async ({page})=>{
+test("multiple drag and drop", async ({page})=>{
 
     await page.goto("https://selenium.qabible.in/drag-drop.php")
 

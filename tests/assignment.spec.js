@@ -47,7 +47,7 @@ test ("Assignmenttwo" , async ({page})=>{
 
 })
 
-test.only ("Handling simple alert",async ({page})=>{
+test("Handling simple alert",async ({page})=>{
 
     await page.goto("https://selenium.qabible.in/javascript-alert.php")
      const simpleAlertButton= page.getByRole('button',{name:'Click me!'}).first()
